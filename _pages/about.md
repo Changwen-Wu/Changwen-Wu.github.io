@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
+======
 About me
 ======
 I am a third-year master's student in the Institute for Brain Research and Rehabilitation at South China Normal University. I am interested in using multimodal neuroimaging techniques and graph theorical methods to modeling brain sturcture and function.
