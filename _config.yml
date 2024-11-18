@@ -12,7 +12,7 @@ title                    : "Changwen's blog"
 title_separator          : "-"
 name                     : &name "Changwen Wu"
 description              : &description "personal description"
-url                      : https://https://changwen-wu.github.io/
+url                      : https://changwen-wu.github.io/
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Changwen-Wu/Changwen-Wu.github.io"
 
