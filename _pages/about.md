@@ -16,7 +16,7 @@ I am a third-year master's student in the Institute for Brain Research and Rehab
 Under the supervision Prof. [Jinhui Wang](https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao), I am working on network analysis using multimodal MRI imaging (fMRI/DWI/sMRI/ASL).
 
 
-[CV](master/files/CV.pdf)
+[CV](files/CV.pdf)
 
 A data-driven personal website
 ======
