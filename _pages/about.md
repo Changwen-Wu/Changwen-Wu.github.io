@@ -9,9 +9,15 @@ redirect_from:
 
 <br>
 
+Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information in the meantime!
+
+Looking for Opportunities
+======
+Looking for a Ph.D. position in Cognitive/Computational Neuroscience (MRI) in Fall 2025.
+
 About me
 ======
-I am a third-year master's student in the Institute for Brain Research and Rehabilitation at South China Normal University. I am interested in using multimodal neuroimaging techniques and graph theorical methods to modeling brain sturcture and function.
+I am a third-year master's student at the Institute for Brain Research and Rehabilitation, South China Normal University. My research interests focus on using multimodal neuroimaging techniques and graph-theoretical methods to model brain structure and function.
 
 Under the supervision Prof. [Jinhui Wang](https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao), I am working on network analysis using multimodal MRI imaging (fMRI/DWI/sMRI/ASL).
 
