@@ -9,7 +9,7 @@ redirect_from:
 
 <br>
 
-Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information in the meantime!
+Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information in the meantime! You can contact me at [cw.wu1103@gmail.com]
 
 Looking for Opportunities
 ======
