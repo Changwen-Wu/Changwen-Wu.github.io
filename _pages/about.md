@@ -13,7 +13,8 @@ Thank you for visiting! I’m currently in the process of updating and adding co
 
 Looking for Opportunities
 ======
-Looking for a Ph.D. position in Cognitive/Computational Neuroscience (MRI) in Fall 2025.
+Currently seeking a Ph.D. position in Cognitive/Computational Neuroscience (MRI) for Fall 2025. 
+Please find my CV at [here](https://changwen-wu.github.io/files/CV.pdf)
 
 About me
 ======
@@ -21,4 +22,4 @@ I am a third-year master's student at the Institute for Brain Research and Rehab
 
 Under the supervision Prof. [Jinhui Wang](https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao), I am working on network analysis using multimodal MRI imaging (fMRI/DWI/sMRI/ASL).
 
-Please find my CV at [here](https://changwen-wu.github.io/files/CV.pdf)
+
