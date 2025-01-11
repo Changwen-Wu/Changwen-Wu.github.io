@@ -14,6 +14,7 @@ Thank you for visiting! I’m currently in the process of updating and adding co
 Looking for Opportunities
 ======
 Currently seeking a Ph.D. position in Cognitive/Computational Neuroscience (MRI) for Fall 2025. 
+
 Please find my CV at [here](https://changwen-wu.github.io/files/CV.pdf)
 
 About me
