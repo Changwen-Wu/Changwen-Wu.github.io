@@ -22,7 +22,7 @@ redirect_from:
 </p>
 
 <p>
-  In 2022, I received my Master’s degree from the <em>Institute for Brain Research and Rehabilitation</em>, South China Normal University, under the supervision of Prof. Dr. <a href="https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao" target="_blank" style="color: #0066cc;">Jinhui Wang</a>. 
+  In 2022, I received my Master’s degree from the <em>South China Normal University</em>, under the supervision of Prof. Dr. <a href="https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao" target="_blank" style="color: #0066cc;">Jinhui Wang</a>. 
 </p>
 
 <p>
