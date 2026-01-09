@@ -9,18 +9,25 @@ redirect_from:
 
 <br>
 
-Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information in the meantime! You can contact me at [cw.wu1103@gmail.com]
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.8; color: #333;">
 
-Looking for Opportunities
-======
-Currently seeking a Ph.D. position in Cognitive/Computational Neuroscience (MRI) for Fall 2025. 
+<p>
+  Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information! You can contact me at <a href="mailto:cw.wu1103@gmail.com" style="text-decoration: underline; color: #0066cc;">cw.wu1103@gmail.com</a>.
+</p>
 
-Please find my CV at [here](https://changwen-wu.github.io/files/CV.pdf)
+<h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600;">About me</h2>
+<hr style="margin-bottom: 25px;">
 
-About me
-======
-I am a third-year master's student at the Institute for Brain Research and Rehabilitation, South China Normal University. My research interests focus on using multimodal neuroimaging techniques and graph-theoretical methods to model brain structure and function.
+<p>
+  My current research focuses on the <strong>high-order organization</strong> of human brain networks. Specifically, I utilize multimodal MRI techniques to investigate <strong>edge-centric functional connectivity</strong> and <strong>higher-order interactions (HOI)</strong>, aiming to uncover complex neural dynamics in both healthy and diseased brains.
+</p>
 
-Under the supervision Prof. [Jinhui Wang](https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao), I am working on network analysis using multimodal MRI imaging (fMRI/DWI/sMRI/ASL).
+<p>
+  In 2022, I received my Master’s degree from the <em>Institute for Brain Research and Rehabilitation</em>, South China Normal University, under the supervision of Prof. Dr. <a href="https://scholar.google.com/citations?user=4_djMV0AAAAJ&hl=en&oi=ao" target="_blank" style="color: #0066cc;">Jinhui Wang</a>. 
+</p>
 
+<p>
+  Currently, I am a Ph.D. student at the <em>University of Electronic Science and Technology of China (UESTC)</em>, supervised by Prof. Dr. <a href="https://scholar.google.com/citations?user=s8DIQOwAAAAJ" target="_blank" style="color: #0066cc;">Xujun Duan</a>.
+</p>
 
+</div>
