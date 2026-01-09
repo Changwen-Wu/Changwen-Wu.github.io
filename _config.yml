@@ -24,9 +24,9 @@ author:
   avatar           : "Profile.jpg"
   name             : "Changwen Wu"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Guangzhou, China"
-  employer         : "South China Normal University"
+  bio              : # "Short biography for the left-hand sidebar"
+  location         : "Sichuan, China"
+  employer         : "University of Electronic Science and Technology of China"
   uri              : # URL
   email            : "cw.wu1103@gmail.com" 
 
