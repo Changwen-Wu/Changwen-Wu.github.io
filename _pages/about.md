@@ -15,11 +15,10 @@ redirect_from:
   Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information! You can contact me at <a href="mailto:cw.wu1103@gmail.com" style="text-decoration: underline; color: #0066cc;">cw.wu1103@gmail.com</a>.
 </p>
 
-<h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600;">About me</h2>
-<hr style="margin-bottom: 25px;">
+<h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">About me</h2>
 
 <p>
-  My current research focuses on the <strong>high-order organization</strong> of human brain networks. Specifically, I utilize multimodal MRI techniques to investigate <strong>edge-centric functional connectivity</strong> and <strong>higher-order interactions (HOI)</strong>, aiming to uncover complex neural dynamics in both healthy and diseased brains.
+  My current research focuses on the <strong>high-order organization</strong> of human brain networks. Specifically, I utilize multimodal MRI techniques (fMRI/DWI) to investigate <strong>edge-centric functional connectivity</strong> and <strong>higher-order interactions (HOI)</strong>, aiming to uncover complex neural dynamics in both healthy and diseased brains.
 </p>
 
 <p>
