@@ -31,9 +31,6 @@ redirect_from:
 
 <h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">Publications</h2>
 
-<!-- 第一作者文章 -->
-<h3 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.2em; font-weight: 600; color: #444;">Primary Publications</h3>
-
 <ul style="padding-left: 20px; margin-bottom: 30px;">
   <li style="margin-bottom: 15px;">
     <strong>Wu, C.</strong>, He, Y., Li, J., Qiu, X., Zou, Q., & Wang, J.* (2025). A novel method for functional brain networks based on static cerebral blood flow. 
