@@ -43,21 +43,4 @@ redirect_from:
   </li>
 </ul>
 
-<!-- 非第一作者/合作文章 -->
-<h3 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.2em; font-weight: 600; color: #444;">Collaborative Publications</h3>
-
-<ul style="padding-left: 20px; margin-bottom: 20px;">
-  <li style="margin-bottom: 15px;">
-    Author 1, <strong>Wu, C. W.</strong>, Author 3, & Duan, X.* (2024). Title of co-authored paper goes here. 
-    <em>Journal Name</em>, 20(1), 45-58. 
-    [<a href="https://doi.org/xxxxxx" target="_blank" style="color: #0066cc; text-decoration: underline;">DOI</a>]
-  </li>
-
-  <li style="margin-bottom: 15px;">
-    Author 1, Author 2, <strong>Wu, C. W.</strong>, & Wang, J.* (2023). Title of another co-authored paper. 
-    <em>Journal Name</em>, 8(3), 200-215. 
-    [<a href="https://doi.org/xxxxxx" target="_blank" style="color: #0066cc; text-decoration: underline;">DOI</a>]
-  </li>
-</ul>
-
 </div>
