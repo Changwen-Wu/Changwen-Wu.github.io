@@ -36,7 +36,7 @@ redirect_from:
     <strong>Wu, C.</strong>, He, Y., Li, J., Qiu, X., Zou, Q., & Wang, J.* (2025). A novel method for functional brain networks based on static cerebral blood flow. 
     <em>NeuroImage</em>, 308, 121069. 
     [<a href="https://doi.org/10.1016/j.neuroimage.2025.121069" target="_blank" style="color: #0066cc; text-decoration: underline;">DOI</a>] 
-    [<a href="https://your-pdf-link.pdf" target="_blank" style="color: #0066cc; text-decoration: underline;">PDF</a>]
+    [<a href="files/Wu_Neuroimage_CBFnetworks" target="_blank" style="color: #0066cc; text-decoration: underline;">PDF</a>]
   </li>
 </ul>
 
