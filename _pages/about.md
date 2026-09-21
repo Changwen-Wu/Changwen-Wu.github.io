@@ -26,7 +26,7 @@ redirect_from:
 </p>
 
 <p>
-  Currently, I am a Ph.D. student at the <em>University of Electronic Science and Technology of China (UESTC)</em>, supervised by Prof. Dr. <a href="https://scholar.google.com/citations?user=s8DIQOwAAAAJ" target="_blank" style="color: #0066cc;">Xujun Duan</a>.
+  Currently, I am a Ph.D. student at the <em>University of Electronic Science and Technology of China</em>, supervised by Prof. Dr. <a href="https://scholar.google.com/citations?user=s8DIQOwAAAAJ" target="_blank" style="color: #0066cc;">Xujun Duan</a>.
 </p>
 
 <h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">Publications</h2>
