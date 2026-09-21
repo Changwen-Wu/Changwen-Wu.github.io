@@ -9,7 +9,7 @@ redirect_from:
 
 <br>
 
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.8; color: #333; max-width: 1000px;">
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.8; color: #333;">
 
 <p>
   Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information! You can contact me at <a href="mailto:cw.wu1103@gmail.com" style="text-decoration: underline; color: #0066cc;">cw.wu1103@gmail.com</a>.
