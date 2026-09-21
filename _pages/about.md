@@ -18,7 +18,7 @@ redirect_from:
 <h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">About me</h2>
 
 <p>
-  My current research focuses on the <strong>high-order organization</strong> of human brain networks. Specifically, I utilize multimodal MRI techniques (fMRI/DWI) to investigate <strong>edge-centric functional connectivity</strong> and <strong>higher-order interactions (HOI)</strong>, aiming to uncover complex neural dynamics in both healthy and diseased brains.
+  My current research focuses on the <strong>high-order organization</strong> of human brain networks, aiming to uncover complex neural dynamics in both healthy and diseased brains.
 </p>
 
 <p>
