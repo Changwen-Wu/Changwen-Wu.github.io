@@ -5,20 +5,18 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">For bibliometrics, see <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% assign scholar_publications = site.data.google_scholar_publications %}
 {% if scholar_publications and scholar_publications.size > 0 %}
   <ol class="publication-list">
     {% for paper in scholar_publications %}
       <li>
         <strong>{% if paper.url %}<a href="{{ paper.url | escape }}">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% endif %}</strong><br />
-        {{ paper.authors | escape }}{% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.
+        {% assign author_names = paper.authors | replace: " and ", ", " | split: ", " %}
+        {% for author in author_names %}{% if forloop.last and author_names.size > 1 %}and {% endif %}{% if author == "Changwen Wu" %}<u><strong>{{ author | escape }}</strong></u>{% else %}{{ author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+        {% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.{% if paper.pdf %} <a href="{{ paper.pdf | escape }}">[PDF]</a>{% endif %}
       </li>
     {% endfor %}
   </ol>
 {% else %}
-  <p>Publication list is currently unavailable. Please visit my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
+  <p>Publication list is currently unavailable.</p>
 {% endif %}
