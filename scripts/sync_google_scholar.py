@@ -7,7 +7,7 @@ from pathlib import Path
 from scholarly import scholarly
 
 PROFILE_ID = "jQBiItMAAAAJ"
-OUTPUT = Path("_data/google_scholar_publications.json")
+OUTPUT = Path("_data/google_scholar_publications.json")\nPDF_BY_TITLE = {\n    "A novel method for functional brain networks based on static cerebral blood flow":\n        "https://changwen-wu.github.io/files/Wu_Neuroimage_CBFnetworks.pdf",\n}
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
                 "venue": (bib.get("venue") or bib.get("journal") or "").strip(),
                 "year": year,
                 "url": item.get("pub_url") or "",
-                "citations": int(item.get("num_citations") or 0),
+                "citations": int(item.get("num_citations") or 0),\n                "pdf": PDF_BY_TITLE.get(title, ""),
             }
         )
 
