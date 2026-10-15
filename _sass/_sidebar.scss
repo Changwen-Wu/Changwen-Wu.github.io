@@ -239,9 +239,7 @@
     }
   }
 
-  li {
-    white-space: nowrap;
-  }
+  li {\n    white-space: normal;\n    overflow-wrap: anywhere;\n  }
 
   a {
     display: block;
