@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Changwen's blog"
+title                    : "Changwen Wu's Home Page"
 title_separator          : "-"
 name                     : &name "Changwen Wu"
 description              : &description "personal description"
@@ -42,37 +42,37 @@ author:
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "Changwen-Wu"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  codepen           : # Username
+  dribbble          : # Username
+  github            : "Changwen-Wu"
+  kaggle            : # Username  
+  stackoverflow     : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
-  linkedin         : # Username
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : "ChangwenWu1103"
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
+  bluesky           : # Replace this with you Bluesky username
+  facebook          : # Username
+  flickr            : # Username
+  foursquare        : # Username
+  goodreads         : # Username
+  google_plus       : # Username
+  keybase           : # Username
+  instagram         : # Username
+  lastfm            : # Username
+  linkedin          : # Username
+  mastodon          : # URL
+  medium            : # URL
+  pinterest         : # Username
+  soundcloud        : # Username
+  steam             : # Username
+  telegram          : # URL
+  tumblr            : # Username
+  twitter           : "ChangwenWu1103"
+  vine              : # Username
+  weibo             : # Username
+  wikipedia         : # Username
+  xing              : # Username
+  youtube           : # Username
+  zhihu             : # Username
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
@@ -89,7 +89,7 @@ breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link             : false #change to true to add link to talkmap on talks page
+talkmap_link             : false #change to true to add link to talkmap page
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -123,9 +123,9 @@ atom_feed:
 
 # SEO Related
 google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
+bing_site_verification  :
+alexa_site_verification :
+yandex_site_verification:
 
 
 # Social Sharing
@@ -210,7 +210,7 @@ kramdown:
   enable_coderay: false
 
 
-# These settings control the types of collections used by the template
+# These settings control the types of collections used by the site
 collections:
   teaching:
     output: true
@@ -316,10 +316,7 @@ whitelist:
 # Archives
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
+#  - Jekyll Archives plugin ~> type: jekyll-archives
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
