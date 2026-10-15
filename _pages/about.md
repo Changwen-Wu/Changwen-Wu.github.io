@@ -29,15 +29,6 @@ redirect_from:
   Currently, I am a Ph.D. student at the <em>University of Electronic Science and Technology of China</em>, supervised by Prof. Dr. <a href="https://scholar.google.com/citations?user=s8DIQOwAAAAJ" target="_blank" style="color: #0066cc;">Xujun Duan</a>.
 </p>
 
-<h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">Publications</h2>
 
-<ul style="padding-left: 20px; margin-bottom: 30px;">
-  <li style="margin-bottom: 15px;">
-    <strong>Wu, C.</strong>, He, Y., Li, J., Qiu, X., Zou, Q., & Wang, J.* (2025). A novel method for functional brain networks based on static cerebral blood flow. 
-    <em>NeuroImage</em>, 308, 121069. 
-    [<a href="https://doi.org/10.1016/j.neuroimage.2025.121069" target="_blank" style="color: #0066cc; text-decoration: underline;">DOI</a>] 
-    [<a href="https://github.com/Changwen-Wu/Changwen-Wu.github.io/raw/master/files/Wu_Neuroimage_CBFnetworks.pdf" target="_blank" style="color: #0066cc; text-decoration: underline;">PDF</a>]
-  </li>
-</ul>
 
 </div>
