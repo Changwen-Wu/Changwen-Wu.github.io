@@ -7,7 +7,11 @@ from pathlib import Path
 from scholarly import scholarly
 
 PROFILE_ID = "jQBiItMAAAAJ"
-OUTPUT = Path("_data/google_scholar_publications.json")\nPDF_BY_TITLE = {\n    "A novel method for functional brain networks based on static cerebral blood flow":\n        "https://changwen-wu.github.io/files/Wu_Neuroimage_CBFnetworks.pdf",\n}
+OUTPUT = Path("_data/google_scholar_publications.json")
+PDF_BY_TITLE = {
+    "A novel method for functional brain networks based on static cerebral blood flow":
+        "https://changwen-wu.github.io/files/Wu_Neuroimage_CBFnetworks.pdf",
+}
 
 
 def main():
@@ -28,7 +32,8 @@ def main():
                 "venue": (bib.get("venue") or bib.get("journal") or "").strip(),
                 "year": year,
                 "url": item.get("pub_url") or "",
-                "citations": int(item.get("num_citations") or 0),\n                "pdf": PDF_BY_TITLE.get(title, ""),
+                "citations": int(item.get("num_citations") or 0),
+                "pdf": PDF_BY_TITLE.get(title, ""),
             }
         )
 
@@ -38,7 +43,8 @@ def main():
     publications.sort(key=lambda p: (p["year"], p["title"]), reverse=True)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
-        json.dumps(publications, ensure_ascii=False, indent=2) + "\n",
+        json.dumps(publications, ensure_ascii=False, indent=2) + "
+",
         encoding="utf-8",
     )
 
