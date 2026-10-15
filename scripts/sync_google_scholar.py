@@ -14,6 +14,16 @@ PDF_BY_TITLE = {
 }
 
 
+def abbreviate_author(name):
+    """Format a full author name as surname followed by given-name initials."""
+    parts = name.strip().split()
+    if len(parts) < 2:
+        return name.strip()
+    surname = parts[-1]
+    initials = " ".join(f"{part[0]}." for part in parts[:-1] if part)
+    return f"{surname}, {initials}"
+
+
 def main():
     author = scholarly.search_author_id(PROFILE_ID)
     author = scholarly.fill(author, sections=["publications"])
@@ -25,10 +35,15 @@ def main():
         if not title:
             continue
         year = str(bib.get("pub_year") or "").strip()
+        authors = (bib.get("author") or "").strip()
+        author_names = [name.strip() for name in authors.split(",") if name.strip()]
         publications.append(
             {
                 "title": title,
-                "authors": (bib.get("author") or "").strip(),
+                "authors": authors,
+                "author_abbreviations": "|".join(
+                    abbreviate_author(name) for name in author_names
+                ),
                 "venue": (bib.get("venue") or bib.get("journal") or "").strip(),
                 "year": year,
                 "url": item.get("pub_url") or "",
@@ -43,8 +58,7 @@ def main():
     publications.sort(key=lambda p: (p["year"], p["title"]), reverse=True)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
-        json.dumps(publications, ensure_ascii=False, indent=2) + "
-",
+        json.dumps(publications, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
