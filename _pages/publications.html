@@ -6,24 +6,19 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+  <div class="wordwrap">For bibliometrics, see <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.</div>
 {% endif %}
 
 {% assign scholar_publications = site.data.google_scholar_publications %}
 {% if scholar_publications and scholar_publications.size > 0 %}
-  <h2>Publications</h2><hr />
-  {% for paper in scholar_publications %}
-    <div class="list__item">
-      <article class="archive__item">
-        <h3 class="archive__item-title">
-          {% if paper.url %}<a href="{{ paper.url | escape }}">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% endif %}
-        </h3>
-        <p class="archive__item-excerpt">
-          {{ paper.authors | escape }}{% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <i>{{ paper.venue | escape }}</i>{% endif %}{% if paper.citations %}. Cited by {{ paper.citations }}{% endif %}
-        </p>
-      </article>
-    </div>
-  {% endfor %}
+  <ol class="publication-list">
+    {% for paper in scholar_publications %}
+      <li>
+        <strong>{% if paper.url %}<a href="{{ paper.url | escape }}">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% endif %}</strong><br />
+        {{ paper.authors | escape }}{% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.
+      </li>
+    {% endfor %}
+  </ol>
 {% else %}
   <p>Publication list is currently unavailable. Please visit my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
 {% endif %}
