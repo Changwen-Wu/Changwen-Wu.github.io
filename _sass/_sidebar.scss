@@ -170,6 +170,7 @@
 
   @include breakpoint($large) {
     display: block;
+    margin-top: 1.25em;
   }
 
   button {
@@ -239,7 +240,10 @@
     }
   }
 
-  li {\n    white-space: normal;\n    overflow-wrap: anywhere;\n  }
+  li {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 
   a {
     display: block;
