@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* PH.D. in Biomedical Engineering, University of Electronic Science and Technology of China, 2025-Present
+* Ph.D. in Biomedical Engineering, University of Electronic Science and Technology of China, 2025-Present
 * M.S. in Computational Neuroscience, South China Normal University, 2022-2025
 * B.S. in Computer Science, Xi'an University of Posts and Telecommunications, 2018-2022
 
