@@ -1,11 +1,62 @@
 [
   {
+    "title": "Connectivity allometry is a robust organizing principle of the human functional connectome",
+    "authors": "",
+    "author_abbreviations": "",
+    "venue": "",
+    "year": "2026",
+    "url": "",
+    "citations": 0,
+    "pdf": ""
+  },
+  {
     "title": "A novel method for functional brain networks based on static cerebral blood flow",
-    "authors": "Changwen Wu, Yu He, Junle Li, Xiaofan Qiu, Qihong Zou, Jinhui Wang",
-    "author_abbreviations": "Wu, C.|He, Y.|Li, J.|Qiu, X.|Zou, Q.|Wang, J.",
-    "venue": "NeuroImage",
+    "authors": "",
+    "author_abbreviations": "",
+    "venue": "",
     "year": "2025",
-    "url": "https://doi.org/10.1016/j.neuroimage.2025.121069",
+    "url": "",
+    "citations": 4,
     "pdf": "https://changwen-wu.github.io/files/Wu_Neuroimage_CBFnetworks.pdf"
+  },
+  {
+    "title": "Enhanced cerebral blood flow similarity of the somatomotor network in chronic insomnia: transcriptomic decoding, gut microbial signatures and phenotypic roles",
+    "authors": "",
+    "author_abbreviations": "",
+    "venue": "",
+    "year": "2024",
+    "url": "",
+    "citations": 10,
+    "pdf": ""
+  },
+  {
+    "title": "A comprehensive evaluation of multicentric reliability of single-subject cortical morphological networks on traveling subjects",
+    "authors": "",
+    "author_abbreviations": "",
+    "venue": "",
+    "year": "2023",
+    "url": "",
+    "citations": 23,
+    "pdf": ""
+  },
+  {
+    "title": "The Redox–Connectome Coupling Across Adulthood: A Cross-Scale Marker of Human Brain Aging With Affective and Cognitive Relevance",
+    "authors": "",
+    "author_abbreviations": "",
+    "venue": "",
+    "year": "",
+    "url": "",
+    "citations": 0,
+    "pdf": ""
+  },
+  {
+    "title": "The Brain-Body Axis in Humans: Evidence from Coupling between Multimodal Brain Imaging Phenotypes and Multi-Organ Microbiome",
+    "authors": "",
+    "author_abbreviations": "",
+    "venue": "",
+    "year": "",
+    "url": "",
+    "citations": 0,
+    "pdf": ""
   }
 ]
