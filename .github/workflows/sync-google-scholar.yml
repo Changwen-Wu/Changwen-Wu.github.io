@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 3 1 * *"
   workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - ".github/workflows/sync-google-scholar.yml"
+      - "scripts/sync_google_scholar.py"
 
 permissions:
   contents: write
