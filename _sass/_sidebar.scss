@@ -131,6 +131,10 @@
 .sidebar .author__desktop {
   display: none;
 
+  .icon-pad-right {
+    margin-right: 0;
+  }
+
   @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: 1.25em minmax(0, 1fr);
