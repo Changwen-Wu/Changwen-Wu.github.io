@@ -22,12 +22,16 @@ jobs:
       - name: Install publication tools
         run: python -m pip install scholarly==1.7.11 bibtexparser==1.4.3 requests 'pypdf>=5'
       - name: Fetch publications
+        id: scholar
+        timeout-minutes: 5
         run: python scripts/sync_google_scholar.py
       - name: Fetch openly licensed full texts and supplements
+        if: success() || steps.scholar.outcome == 'failure'
         run: python scripts/sync_open_access_fulltexts.py
       - name: Commit updated publications and files
+        if: success() || steps.scholar.outcome == 'failure'
         run: |
-          git add _data/google_scholar_publications.json _data/publication_pdfs.json _data/publication_supplements.json _data/publication_fulltext_status.json files/publications/
+          git add -A _data/google_scholar_publications.json _data/publication_pdfs.json _data/publication_supplements.json _data/publication_fulltext_status.json files/
           if git diff --cached --quiet; then
             echo "No publication changes."
             exit 0
