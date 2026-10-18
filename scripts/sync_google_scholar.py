@@ -12,6 +12,7 @@ import requests
 from scholarly import scholarly
 
 PROFILE_ID = "jQBiItMAAAAJ"
+ORCID_ID = "0009-0007-2996-9965"
 OUTPUT = Path("_data/google_scholar_publications.json")
 PDF_BY_TITLE = {
     "A novel method for functional brain networks based on static cerebral blood flow":
@@ -91,6 +92,55 @@ def crossref_metadata(title):
     return {}
 
 
+def crossref_author_publications(previous):
+    """Add ORCID-matched works when Google Scholar blocks the Actions runner."""
+    response = requests.get(
+        "https://api.crossref.org/works",
+        params={"filter": f"orcid:{ORCID_ID}", "rows": 100},
+        headers={"User-Agent": "Changwen-Wu-homepage/1.0"},
+        timeout=20,
+    )
+    response.raise_for_status()
+    works = response.json()["message"]["items"]
+    publications = dict(previous)
+
+    for work in works:
+        contributors = work.get("author", [])
+        if not any(
+            entry.get("ORCID", "").rstrip("/").endswith(ORCID_ID)
+            for entry in contributors
+        ):
+            continue
+        title = str((work.get("title") or [""])[0]).strip()
+        if not title:
+            continue
+        names = [
+            " ".join(part for part in (entry.get("given"), entry.get("family")) if part)
+            for entry in contributors
+        ]
+        names = [name for name in names if name]
+        if not names:
+            continue
+        key = normalized_title(title)
+        prior = publications.get(key, {})
+        published = work.get("published", {}).get("date-parts", [[]])
+        year = str(published[0][0]) if published and published[0] else ""
+        doi = work.get("DOI") or ""
+        publications[key] = {
+            "title": prior.get("title") or title,
+            "authors": prior.get("authors") or ", ".join(names),
+            "author_abbreviations": prior.get("author_abbreviations") or "|".join(
+                abbreviate_author(name) for name in names
+            ),
+            "venue": prior.get("venue") or (work.get("container-title") or [""])[0],
+            "year": prior.get("year") or year,
+            "url": prior.get("url") or (f"https://doi.org/{doi}" if doi else ""),
+            "citations": prior.get("citations", 0),
+            "pdf": PDF_BY_TITLE.get(title) or prior.get("pdf", ""),
+        }
+    return list(publications.values())
+
+
 @contextmanager
 def scholar_timeout(seconds):
     """Bound slow article-detail requests on the Linux Actions runner."""
@@ -112,12 +162,22 @@ def scholar_timeout(seconds):
 
 def main():
     previous = previous_publications()
-    with scholar_timeout(45):
-        author = scholarly.search_author_id(PROFILE_ID)
-        author = scholarly.fill(author, sections=["publications"])
-    publications = []
+    try:
+        with scholar_timeout(45):
+            author = scholarly.search_author_id(PROFILE_ID)
+            author = scholarly.fill(author, sections=["publications"])
+        scholar_items = author.get("publications", [])
+    except Exception as error:
+        print(f"Google Scholar unavailable: {error}", flush=True)
+        publications = crossref_author_publications(previous)
+        if not publications:
+            raise RuntimeError("Neither Scholar nor Crossref returned publications.") from error
+        scholar_items = None
 
-    for item in author.get("publications", []):
+    if scholar_items is not None:
+        publications = []
+
+    for item in scholar_items or []:
         summary = item.get("bib", {})
         title = str(summary.get("title") or "").strip()
         if not title:
@@ -178,7 +238,7 @@ def main():
         )
 
     if not publications:
-        raise RuntimeError("Google Scholar returned no publications; keeping the previous data.")
+        raise RuntimeError("No publications were found; keeping the previous data.")
 
     publications.sort(key=lambda paper: (paper["year"], paper["title"]), reverse=True)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
