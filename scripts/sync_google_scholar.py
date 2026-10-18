@@ -14,41 +14,89 @@ PDF_BY_TITLE = {
 }
 
 
+def author_names(value):
+    """Accept the list or string returned by different Scholar publication pages."""
+    if isinstance(value, list):
+        return [str(name).strip() for name in value if str(name).strip()]
+    if not isinstance(value, str):
+        return []
+    if " and " in value:
+        return [name.strip() for name in value.split(" and ") if name.strip()]
+    return [name.strip() for name in value.split(",") if name.strip()]
+
+
 def abbreviate_author(name):
     """Format a full author name as surname followed by given-name initials."""
-    parts = name.strip().split()
-    if len(parts) < 2:
-        return name.strip()
-    surname = parts[-1]
-    initials = " ".join(f"{part[0]}." for part in parts[:-1] if part)
-    return f"{surname}, {initials}"
+    if "," in name:
+        surname, given = (part.strip() for part in name.split(",", 1))
+        parts = given.split()
+    else:
+        parts = name.strip().split()
+        if len(parts) < 2:
+            return name.strip()
+        surname, parts = parts[-1], parts[:-1]
+    initials = " ".join(f"{part[0]}." for part in parts if part)
+    return f"{surname}, {initials}" if initials else surname
+
+
+def previous_publications():
+    if not OUTPUT.exists():
+        return {}
+    return {
+        paper["title"].casefold(): paper
+        for paper in json.loads(OUTPUT.read_text(encoding="utf-8"))
+        if paper.get("title")
+    }
 
 
 def main():
+    previous = previous_publications()
     author = scholarly.search_author_id(PROFILE_ID)
     author = scholarly.fill(author, sections=["publications"])
     publications = []
 
     for item in author.get("publications", []):
-        bib = item.get("bib", {})
-        title = (bib.get("title") or "").strip()
+        summary = item.get("bib", {})
+        title = str(summary.get("title") or "").strip()
         if not title:
             continue
-        year = str(bib.get("pub_year") or "").strip()
-        authors = (bib.get("author") or "").strip()
-        author_names = [name.strip() for name in authors.split(",") if name.strip()]
+        prior = previous.get(title.casefold(), {})
+
+        # Author profile rows contain only a short summary. Open each publication
+        # to retrieve its authors, journal, and link.
+        try:
+            detailed = scholarly.fill(item)
+        except Exception as error:
+            print(f"Could not fetch details for {title}: {error}")
+            detailed = item
+        bib = detailed.get("bib", {})
+        names = author_names(bib.get("author") or summary.get("author"))
+        authors = ", ".join(names) or prior.get("authors", "")
+        abbreviations = (
+            "|".join(abbreviate_author(name) for name in names)
+            if names else prior.get("author_abbreviations", "")
+        )
         publications.append(
             {
                 "title": title,
                 "authors": authors,
-                "author_abbreviations": "|".join(
-                    abbreviate_author(name) for name in author_names
+                "author_abbreviations": abbreviations,
+                "venue": str(
+                    bib.get("venue") or bib.get("journal") or summary.get("venue")
+                    or summary.get("journal") or prior.get("venue") or ""
+                ).strip(),
+                "year": str(
+                    bib.get("pub_year") or summary.get("pub_year")
+                    or prior.get("year") or ""
+                ).strip(),
+                "url": detailed.get("pub_url") or item.get("pub_url")
+                       or prior.get("url", ""),
+                "citations": int(
+                    item.get("num_citations")
+                    if item.get("num_citations") is not None
+                    else prior.get("citations", 0)
                 ),
-                "venue": (bib.get("venue") or bib.get("journal") or "").strip(),
-                "year": year,
-                "url": item.get("pub_url") or "",
-                "citations": int(item.get("num_citations") or 0),
-                "pdf": PDF_BY_TITLE.get(title, ""),
+                "pdf": PDF_BY_TITLE.get(title) or prior.get("pdf", ""),
             }
         )
 
