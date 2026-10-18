@@ -47,6 +47,16 @@ def normalized_title(title):
     return re.sub(r"[^\w]+", "", text)
 
 
+def publication_role(names, prior):
+    """Keep manual corresponding-author labels; identify new first-author papers."""
+    saved_role = prior.get("role")
+    if saved_role in {"lead", "contributor"}:
+        return saved_role
+    if names and abbreviate_author(names[0]) == "Wu, C.":
+        return "lead"
+    return "contributor"
+
+
 def previous_publications():
     if not OUTPUT.exists():
         return {}
@@ -137,6 +147,7 @@ def crossref_author_publications(previous):
             "url": prior.get("url") or (f"https://doi.org/{doi}" if doi else ""),
             "citations": prior.get("citations", 0),
             "pdf": PDF_BY_TITLE.get(title) or prior.get("pdf", ""),
+            "role": publication_role(names, prior),
         }
     return list(publications.values())
 
@@ -234,6 +245,7 @@ def main():
                     else prior.get("citations", 0)
                 ),
                 "pdf": PDF_BY_TITLE.get(title) or prior.get("pdf", ""),
+                "role": publication_role(names, prior),
             }
         )
 
