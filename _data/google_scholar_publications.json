@@ -1,5 +1,15 @@
 [
   {
+    "title": "The Redox–Connectome Coupling Across Adulthood: A Cross-Scale Marker of Human Brain Aging With Affective and Cognitive Relevance",
+    "authors": "Xiaofan Qiu, Changwen Wu, Fuxin Ren, Yuqing Liao, Wenjing Zhang, Xi Li, Jinhui Wang, Fei Gao",
+    "author_abbreviations": "Qiu, X.|Wu, C.|Ren, F.|Liao, Y.|Zhang, W.|Li, X.|Wang, J.|Gao, F.",
+    "venue": "SSRN",
+    "year": "2026",
+    "url": "https://doi.org/10.2139/ssrn.6504590",
+    "citations": 0,
+    "pdf": ""
+  },
+  {
     "title": "Connectivity allometry is a robust organizing principle of the human functional connectome",
     "authors": "C. Wu, X. Qiu, J. Li, S. Jin, X. Jiang, J. Wang",
     "author_abbreviations": "Wu, C.|Qiu, X.|Li, J.|Jin, S.|Jiang, X.|Wang, J.",
@@ -10,12 +20,12 @@
     "pdf": ""
   },
   {
-    "title": "The Redox–Connectome Coupling Across Adulthood: A Cross-Scale Marker of Human Brain Aging With Affective and Cognitive Relevance",
-    "authors": "Xiaofan Qiu, Changwen Wu, Fuxin Ren, Yuqing Liao, Wenjing Zhang, Xi Li, Jinhui Wang, Fei Gao",
-    "author_abbreviations": "Qiu, X.|Wu, C.|Ren, F.|Liao, Y.|Zhang, W.|Li, X.|Wang, J.|Gao, F.",
+    "title": "The Brain-Body Axis in Humans: Evidence from Coupling between Multimodal Brain Imaging Phenotypes and Multi-Organ Microbiome",
+    "authors": "Suhui Jin, Junle Li, Changwen Wu, Yuqi Wang, Yiwei Ren, Qingchun Lin, Junbin Liu, Qianglong Lin, Xiaofen Ma, Jinhui Wang",
+    "author_abbreviations": "Jin, S.|Li, J.|Wu, C.|Wang, Y.|Ren, Y.|Lin, Q.|Liu, J.|Lin, Q.|Ma, X.|Wang, J.",
     "venue": "SSRN",
-    "year": "2026",
-    "url": "https://doi.org/10.2139/ssrn.6504590",
+    "year": "2025",
+    "url": "https://doi.org/10.2139/ssrn.5346491",
     "citations": 0,
     "pdf": ""
   },
@@ -28,16 +38,6 @@
     "url": "https://doi.org/10.1016/j.neuroimage.2025.121069",
     "citations": 4,
     "pdf": "https://changwen-wu.github.io/files/Wu_Neuroimage_CBFnetworks.pdf"
-  },
-  {
-    "title": "The Brain-Body Axis in Humans: Evidence from Coupling between Multimodal Brain Imaging Phenotypes and Multi-Organ Microbiome",
-    "authors": "Suhui Jin, Junle Li, Changwen Wu, Yuqi Wang, Yiwei Ren, Qingchun Lin, Junbin Liu, Qianglong Lin, Xiaofen Ma, Jinhui Wang",
-    "author_abbreviations": "Jin, S.|Li, J.|Wu, C.|Wang, Y.|Ren, Y.|Lin, Q.|Liu, J.|Lin, Q.|Ma, X.|Wang, J.",
-    "venue": "SSRN",
-    "year": "2025",
-    "url": "https://doi.org/10.2139/ssrn.5346491",
-    "citations": 0,
-    "pdf": ""
   },
   {
     "title": "Enhanced cerebral blood flow similarity of the somatomotor network in chronic insomnia: transcriptomic decoding, gut microbial signatures and phenotypic roles",
