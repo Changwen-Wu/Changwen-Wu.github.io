@@ -35,7 +35,12 @@ redirect_from:
 <section id="contact" style="margin-top: 48px; padding: 24px; border: 1px solid #e3e7eb; border-radius: 10px; background: #fafbfc;">
   <h2 style="margin: 0 0 8px; font-size: 1.3em; font-weight: 600;">Contact me</h2>
   <p style="margin: 0 0 20px;">Have a question or want to collaborate? Write me a message.</p>
-  <form id="home-contact-form">
+  <form action="https://formsubmit.co/{{ site.author.email | escape }}" method="POST">
+    <input type="hidden" name="_subject" value="New message from Changwen Wu's Home Page" />
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display: none;" aria-hidden="true" />
+
+    <label for="contact-email" style="display: block; margin-bottom: 6px; font-weight: 600;">Your email</label>
+    <input id="contact-email" name="email" type="email" required style="display: block; width: 100%; box-sizing: border-box; margin-bottom: 16px; padding: 10px 12px; border: 1px solid #cbd5df; border-radius: 6px; font: inherit;" />
     <label for="contact-subject" style="display: block; margin-bottom: 6px; font-weight: 600;">Subject</label>
     <input id="contact-subject" name="subject" type="text" required style="display: block; width: 100%; box-sizing: border-box; margin-bottom: 16px; padding: 10px 12px; border: 1px solid #cbd5df; border-radius: 6px; font: inherit;" />
 
@@ -44,24 +49,8 @@ redirect_from:
 
     <button type="submit" style="padding: 10px 18px; border: 0; border-radius: 6px; background: #267ca3; color: #fff; font: inherit; font-weight: 600; cursor: pointer;">Send email</button>
   </form>
-  <p style="margin: 16px 0 0; font-size: 0.85em; color: #606b73;">This opens your email app with the message ready to send. You can also write directly to <a href="mailto:{{ site.author.email | escape }}">{{ site.author.email | escape }}</a>.</p>
+  <p style="margin: 16px 0 0; font-size: 0.85em; color: #606b73;">Messages are processed by FormSubmit and forwarded to my inbox. You can also write directly to <a href="mailto:{{ site.author.email | escape }}">{{ site.author.email | escape }}</a>.</p>
 </section>
 
-<script>
-(function () {
-  var form = document.getElementById("home-contact-form");
-  if (!form) return;
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var subject = form.elements.subject.value.trim();
-    var message = form.elements.message.value.trim();
-    if (!subject || !message) return;
-    var recipient = {{ site.author.email | jsonify }};
-    window.location.href = "mailto:" + recipient
-      + "?subject=" + encodeURIComponent(subject)
-      + "&body=" + encodeURIComponent(message);
-  });
-})();
-</script>
 
 </div>
