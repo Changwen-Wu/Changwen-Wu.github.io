@@ -48,11 +48,14 @@ def normalized_title(title):
 
 
 def publication_role(names, prior):
-    """Keep manual corresponding-author labels; identify new first-author papers."""
+    """Keep manual labels; group new first- or last-author papers as lead."""
     saved_role = prior.get("role")
     if saved_role in {"lead", "contributor"}:
         return saved_role
-    if names and abbreviate_author(names[0]) == "Wu, C.":
+    if names and (
+        abbreviate_author(names[0]) == "Wu, C."
+        or abbreviate_author(names[-1]) == "Wu, C."
+    ):
         return "lead"
     return "contributor"
 
