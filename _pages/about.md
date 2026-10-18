@@ -41,9 +41,6 @@ redirect_from:
 
     <label for="contact-email" style="display: block; margin-bottom: 6px; font-weight: 600;">Your email</label>
     <input id="contact-email" name="email" type="email" required style="display: block; width: 100%; box-sizing: border-box; margin-bottom: 16px; padding: 10px 12px; border: 1px solid #cbd5df; border-radius: 6px; font: inherit;" />
-    <label for="contact-subject" style="display: block; margin-bottom: 6px; font-weight: 600;">Subject</label>
-    <input id="contact-subject" name="subject" type="text" required style="display: block; width: 100%; box-sizing: border-box; margin-bottom: 16px; padding: 10px 12px; border: 1px solid #cbd5df; border-radius: 6px; font: inherit;" />
-
     <label for="contact-message" style="display: block; margin-bottom: 6px; font-weight: 600;">Message</label>
     <textarea id="contact-message" name="message" rows="6" required style="display: block; width: 100%; box-sizing: border-box; margin-bottom: 16px; padding: 10px 12px; border: 1px solid #cbd5df; border-radius: 6px; font: inherit; resize: vertical;"></textarea>
 
