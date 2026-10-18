@@ -17,7 +17,7 @@ author_profile: true
         <strong>{% if paper.url %}<a href="{{ paper.url | escape }}">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% endif %}</strong><br />
         {% assign author_names = paper.author_abbreviations | split: "|" %}
         {% for author in author_names %}{% assign author_name = author | strip %}{% if forloop.last and author_names.size > 1 %}and {% endif %}{% if author_name == "Wu, C." %}<u><strong>{{ author_name | escape }}</strong></u>{% else %}{{ author_name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
-        {% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.{% assign paper_pdf = site.data.publication_pdfs[paper.title] %}{% if paper_pdf == nil %}{% assign paper_pdf = paper.pdf %}{% endif %}{% if paper_pdf != blank %} <a href="{{ paper_pdf | escape }}">[PDF]</a>{% endif %}
+        {% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.{% assign paper_pdf = site.data.publication_pdfs[paper.title] %}{% if paper_pdf == nil %}{% assign paper_pdf = paper.pdf %}{% endif %}{% if paper_pdf != blank %} <a href="{{ paper_pdf | escape }}">[PDF]</a>{% endif %}{% assign paper_si = site.data.publication_supplements[paper.title] %}{% for si_url in paper_si %} <a href="{{ si_url | escape }}">[SI{% if paper_si.size > 1 %} {{ forloop.index }}{% endif %}]</a>{% endfor %}
       </li>
     {% endfor %}
   </ol>
@@ -29,7 +29,7 @@ author_profile: true
         <strong>{% if paper.url %}<a href="{{ paper.url | escape }}">{% endif %}{{ paper.title | escape }}{% if paper.url %}</a>{% endif %}</strong><br />
         {% assign author_names = paper.author_abbreviations | split: "|" %}
         {% for author in author_names %}{% assign author_name = author | strip %}{% if forloop.last and author_names.size > 1 %}and {% endif %}{% if author_name == "Wu, C." %}<u><strong>{{ author_name | escape }}</strong></u>{% else %}{{ author_name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
-        {% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.{% assign paper_pdf = site.data.publication_pdfs[paper.title] %}{% if paper_pdf == nil %}{% assign paper_pdf = paper.pdf %}{% endif %}{% if paper_pdf != blank %} <a href="{{ paper_pdf | escape }}">[PDF]</a>{% endif %}
+        {% if paper.year %} ({{ paper.year | escape }}){% endif %}{% if paper.venue %}. <em>{{ paper.venue | escape }}</em>{% endif %}.{% assign paper_pdf = site.data.publication_pdfs[paper.title] %}{% if paper_pdf == nil %}{% assign paper_pdf = paper.pdf %}{% endif %}{% if paper_pdf != blank %} <a href="{{ paper_pdf | escape }}">[PDF]</a>{% endif %}{% assign paper_si = site.data.publication_supplements[paper.title] %}{% for si_url in paper_si %} <a href="{{ si_url | escape }}">[SI{% if paper_si.size > 1 %} {{ forloop.index }}{% endif %}]</a>{% endfor %}
       </li>
     {% endfor %}
   </ol>
