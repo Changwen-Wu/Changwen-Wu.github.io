@@ -14,10 +14,9 @@ from scholarly import scholarly
 PROFILE_ID = "jQBiItMAAAAJ"
 ORCID_ID = "0009-0007-2996-9965"
 OUTPUT = Path("_data/google_scholar_publications.json")
-PDF_BY_TITLE = {
-    "A novel method for functional brain networks based on static cerebral blood flow":
-        "https://changwen-wu.github.io/files/Wu_Neuroimage_CBFnetworks.pdf",
-}
+PDF_LINKS = Path("_data/publication_pdfs.json")
+# Upload PDFs to files/, then fill in their URLs in publication_pdfs.json.
+PDF_BY_TITLE = json.loads(PDF_LINKS.read_text(encoding="utf-8")) if PDF_LINKS.exists() else {}
 
 
 def author_names(value):
@@ -149,7 +148,7 @@ def crossref_author_publications(previous):
             "year": prior.get("year") or year,
             "url": prior.get("url") or (f"https://doi.org/{doi}" if doi else ""),
             "citations": prior.get("citations", 0),
-            "pdf": PDF_BY_TITLE.get(title) or prior.get("pdf", ""),
+            "pdf": PDF_BY_TITLE.get(title, prior.get("pdf", "")),
             "role": publication_role(names, prior),
         }
     return list(publications.values())
@@ -247,7 +246,7 @@ def main():
                     if item.get("num_citations") is not None
                     else prior.get("citations", 0)
                 ),
-                "pdf": PDF_BY_TITLE.get(title) or prior.get("pdf", ""),
+                "pdf": PDF_BY_TITLE.get(title, prior.get("pdf", "")),
                 "role": publication_role(names, prior),
             }
         )
@@ -256,9 +255,20 @@ def main():
         raise RuntimeError("No publications were found; keeping the previous data.")
 
     publications.sort(key=lambda paper: (paper["year"], paper["title"]), reverse=True)
+    for paper in publications:
+        title = paper["title"]
+        if title in PDF_BY_TITLE:
+            paper["pdf"] = PDF_BY_TITLE[title]
+        else:
+            PDF_BY_TITLE[title] = paper.get("pdf", "")
+
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
         json.dumps(publications, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    PDF_LINKS.write_text(
+        json.dumps(PDF_BY_TITLE, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
