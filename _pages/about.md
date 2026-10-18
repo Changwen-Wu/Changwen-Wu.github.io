@@ -34,7 +34,7 @@ redirect_from:
 
 <section id="contact" style="margin-top: 48px; padding: 24px; border: 1px solid #e3e7eb; border-radius: 10px; background: #fafbfc;">
   <h2 style="margin: 0 0 8px; font-size: 1.3em; font-weight: 600;">Contact me</h2>
-  <p style="margin: 0 0 20px;">Have a question or want to collaborate? Write me a message.</p>
+  <p style="margin: 0 0 20px;">Thank you for visiting my page. If you have a question, an idea, or would like to discuss research, I would be glad to hear from you.</p>
   <form action="https://formsubmit.co/{{ site.author.email | escape }}" method="POST">
     <input type="hidden" name="_subject" value="New message from Changwen Wu's Home Page" />
     <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display: none;" aria-hidden="true" />
