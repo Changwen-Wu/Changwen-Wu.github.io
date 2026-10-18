@@ -3,13 +3,12 @@
 
 import json
 import re
-import signal
+import subprocess
+import sys
 import unicodedata
-from contextlib import contextmanager
 from pathlib import Path
 
 import requests
-from scholarly import scholarly
 
 PROFILE_ID = "jQBiItMAAAAJ"
 ORCID_ID = "0009-0007-2996-9965"
@@ -154,33 +153,23 @@ def crossref_author_publications(previous):
     return list(publications.values())
 
 
-@contextmanager
-def scholar_timeout(seconds):
-    """Bound slow article-detail requests on the Linux Actions runner."""
-    if not hasattr(signal, "SIGALRM"):
-        yield
-        return
-
-    def timed_out(_signum, _frame):
-        raise TimeoutError("Google Scholar publication request timed out")
-
-    old_handler = signal.signal(signal.SIGALRM, timed_out)
-    signal.alarm(seconds)
-    try:
-        yield
-    finally:
-        signal.alarm(0)
-        signal.signal(signal.SIGALRM, old_handler)
+def scholar_publications():
+    """Run the unreliable Scholar client in a process with a hard deadline."""
+    result = subprocess.run(
+        [sys.executable, "scripts/scholar_snapshot.py"],
+        capture_output=True,
+        text=True,
+        timeout=45,
+        check=True,
+    )
+    return json.loads(result.stdout.strip().splitlines()[-1])
 
 
 def main():
     previous = previous_publications()
     try:
-        with scholar_timeout(45):
-            author = scholarly.search_author_id(PROFILE_ID)
-            author = scholarly.fill(author, sections=["publications"])
-        scholar_items = author.get("publications", [])
-    except Exception as error:
+        scholar_items = scholar_publications()
+    except (subprocess.SubprocessError, ValueError, IndexError) as error:
         print(f"Google Scholar unavailable: {error}", flush=True)
         publications = crossref_author_publications(previous)
         if not publications:
@@ -205,17 +194,7 @@ def main():
         if needs_authors or needs_venue or needs_link:
             metadata = crossref_metadata(title)
 
-        # Profile rows usually contain a title and year only. Fetch a detailed
-        # Scholar record when Crossref and saved data cannot supply authors.
-        detailed = item
-        if not names and not metadata.get("authors") and not prior.get("authors"):
-            try:
-                with scholar_timeout(12):
-                    detailed = scholarly.fill(item)
-            except Exception as error:
-                print(f"Scholar details unavailable for {title}: {error}", flush=True)
-
-        bib = detailed.get("bib", {})
+        bib = item.get("bib", {})
         names = (
             author_names(bib.get("author"))
             or names
@@ -239,8 +218,7 @@ def main():
                     bib.get("pub_year") or summary.get("pub_year")
                     or metadata.get("year") or prior.get("year") or ""
                 ).strip(),
-                "url": prior.get("url") or detailed.get("pub_url")
-                       or item.get("pub_url") or metadata.get("url", ""),
+                "url": prior.get("url") or item.get("pub_url") or metadata.get("url", ""),
                 "citations": int(
                     item.get("num_citations")
                     if item.get("num_citations") is not None
