@@ -112,8 +112,9 @@ def scholar_timeout(seconds):
 
 def main():
     previous = previous_publications()
-    author = scholarly.search_author_id(PROFILE_ID)
-    author = scholarly.fill(author, sections=["publications"])
+    with scholar_timeout(45):
+        author = scholarly.search_author_id(PROFILE_ID)
+        author = scholarly.fill(author, sections=["publications"])
     publications = []
 
     for item in author.get("publications", []):
@@ -125,7 +126,10 @@ def main():
         names = author_names(summary.get("author"))
         metadata = {}
 
-        if not names or not (summary.get("venue") or summary.get("journal")):
+        needs_authors = not names and not prior.get("authors")
+        needs_venue = not (summary.get("venue") or summary.get("journal") or prior.get("venue"))
+        needs_link = not (item.get("pub_url") or prior.get("url"))
+        if needs_authors or needs_venue or needs_link:
             metadata = crossref_metadata(title)
 
         # Profile rows usually contain a title and year only. Fetch a detailed
@@ -144,10 +148,9 @@ def main():
             or names
             or metadata.get("authors", [])
         )
-        authors = ", ".join(names) or prior.get("authors", "")
-        abbreviations = (
-            "|".join(abbreviate_author(name) for name in names)
-            if names else prior.get("author_abbreviations", "")
+        authors = prior.get("authors") or ", ".join(names)
+        abbreviations = prior.get("author_abbreviations") or "|".join(
+            abbreviate_author(name) for name in names
         )
         publications.append(
             {
@@ -155,16 +158,16 @@ def main():
                 "authors": authors,
                 "author_abbreviations": abbreviations,
                 "venue": str(
-                    bib.get("venue") or bib.get("journal")
+                    prior.get("venue") or bib.get("venue") or bib.get("journal")
                     or summary.get("venue") or summary.get("journal")
-                    or metadata.get("venue") or prior.get("venue") or ""
+                    or metadata.get("venue") or ""
                 ).strip(),
                 "year": str(
                     bib.get("pub_year") or summary.get("pub_year")
                     or metadata.get("year") or prior.get("year") or ""
                 ).strip(),
-                "url": detailed.get("pub_url") or item.get("pub_url")
-                       or metadata.get("url") or prior.get("url", ""),
+                "url": prior.get("url") or detailed.get("pub_url")
+                       or item.get("pub_url") or metadata.get("url", ""),
                 "citations": int(
                     item.get("num_citations")
                     if item.get("num_citations") is not None
