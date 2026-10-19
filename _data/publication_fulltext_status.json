@@ -2,9 +2,10 @@
   "The Redox–Connectome Coupling Across Adulthood: A Cross-Scale Marker of Human Brain Aging With Affective and Cognitive Relevance": {
     "doi": "10.2139/ssrn.6504590",
     "checked_at": "2026-10-18",
-    "pdf": "external_download_page",
+    "pdf": "external_pdf",
     "supplements": "not_found",
-    "fulltext_source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6504590"
+    "fulltext_source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6504590",
+    "pdf_source": "https://papers.ssrn.com/sol3/Delivery.cfm/37eb113f-35e3-4577-b4b1-d6636301aac6-MECA.pdf?abstractid=6504590&mirid=1"
   },
   "Connectivity allometry is a robust organizing principle of the human functional connectome": {
     "doi": "10.64898/2026.09.14.751437",
@@ -28,8 +29,9 @@
   "Enhanced cerebral blood flow similarity of the somatomotor network in chronic insomnia: transcriptomic decoding, gut microbial signatures and phenotypic roles": {
     "doi": "10.1016/j.neuroimage.2024.120762",
     "checked_at": "2026-10-18",
-    "pdf": "not_found",
-    "supplements": "not_found"
+    "pdf": "external_pdf",
+    "supplements": "not_found",
+    "pdf_source": "https://www.sciencedirect.com/science/article/pii/S1053811924002593/pdfft?md5=fdb7017bcf0a36b0a239089d98332d10&pid=1-s2.0-S1053811924002593-main.pdf"
   },
   "A comprehensive evaluation of multicentric reliability of single-subject cortical morphological networks on traveling subjects": {
     "doi": "10.1093/cercor/bhad178",
