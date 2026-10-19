@@ -248,6 +248,12 @@ def main():
                 si_links[title] = saved
                 result["supplements"] = "downloaded_or_linked"
                 result["supplement_count"] = len(saved)
+        if doi.startswith("10.2139/ssrn.") and not pdf_links.get(title):
+            abstract_id = doi.rsplit(".", 1)[-1]
+            result["pdf"] = "external_download_page"
+            result["fulltext_source"] = (
+                f"https://papers.ssrn.com/sol3/papers.cfm?abstract_id={abstract_id}"
+            )
         status[title] = result
 
     write_json(PDF_LINKS, pdf_links)
