@@ -190,9 +190,12 @@ def main():
     for paper in publications:
         title = paper["title"]
         doi = doi_of(paper)
+        linked_pdf = pdf_links.get(title, "")
+        pdf_status = ("external_pdf" if linked_pdf and urlparse(linked_pdf).hostname
+                      != urlparse(SITE_URL).hostname else
+                      "already_linked" if linked_pdf else "not_found")
         result = {"doi": doi, "checked_at": datetime.now(timezone.utc).date().isoformat(),
-                  "pdf": "already_linked" if pdf_links.get(title) else "not_found",
-                  "supplements": "not_found"}
+                  "pdf": pdf_status, "supplements": "not_found"}
         record = {}
         if doi:
             try:
