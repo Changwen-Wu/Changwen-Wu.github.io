@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "*To make the unknown known.*"
+title: "*learn all you can when you are young.*"
 author_profile: true
 redirect_from: 
   - /about/
