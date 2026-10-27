@@ -12,7 +12,7 @@ redirect_from:
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.8; color: #333;">
 
 <p>
-  Thank you for visiting! I’m currently in the process of updating and adding content to this page. Please check back soon for more updates. Sorry for any inconvenience, and feel free to reach out if you need any information! You can contact me at <a href="mailto:cw.wu1103@gmail.com" style="text-decoration: underline; color: #0066cc;">cw.wu1103@gmail.com</a>.
+  Welcome, and thank you for visiting. Here you can learn about my research and find my publications. I’m always glad to exchange ideas with others who share an interest in brain science.
 </p>
 
 <h2 style="margin-top: 40px; margin-bottom: 20px; font-weight: 600; border-bottom: 1px solid #eaeaea; padding-bottom: 10px;">About me</h2>
